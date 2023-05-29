@@ -1,0 +1,82 @@
+@import "src/styles/variables.scss";
+.project-item-row-2 {
+  display: flex;
+  margin: 10px;
+}
+
+.project-list-item-row {
+  border-bottom: 0.5px solid gray;
+  color: #34126f;
+}
+
+.project-item-button-link {
+  color: $color-purple;
+}
+
+.project-item-td-project {
+  max-width: 50%;
+}
+.project-item-td-city {
+  color: $color-grey-dark;
+  font-size: $font-size-2;
+  font-weight: 200;
+}
+
+.project-item-td-created {
+  color: $color-grey-dark;
+  font-size: $font-size-2;
+  width: 15%;
+}
+
+.project-item-td-deadline {
+  color: $color-grey-dark;
+  font-size: $font-size-2;
+  width: 10%;
+}
+
+.project-list-item-row-content {
+  margin: 15px;
+}
+
+.project-list-item-row-title {
+}
+
+.project-item-row-2-1 {
+  font-size: $font-size-2;
+  font-style: italic;
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+.project-item-row-2-1-calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.project-item-row-2-1-calendar-2 {
+  margin-left: 3px;
+}
+
+.project-item-row-2-2 {
+  font-size: $font-size-2;
+  font-weight: 100;
+  font-style: italic;
+  color: gray;
+}
+
+.calendar-icon {
+  width: 18px;
+  height: 18px;
+  color: grey;
+}
+
+.date-text {
+  font-size: 12px;
+  margin: 0;
+}
+
+.remote-possible {
+  font-size: 12px;
+  margin-left: 10px;
+}

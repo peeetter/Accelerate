@@ -1,0 +1,29 @@
+@import "src/styles/variables.scss";
+
+.allow-remote {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.allow-remote-icon-div {
+  display: flex;
+}
+.allow-remote-text-div {
+  display: flex;
+}
+
+.allow-remote-text {
+  margin-left: 3px;
+  font-size: $font-size-1;
+  font-style: italic;
+
+  font-weight: 100;
+  margin: 0;
+}
+
+.allow-remote-icon {
+  height: 14px;
+  width: 14px;
+  color: grey;
+}

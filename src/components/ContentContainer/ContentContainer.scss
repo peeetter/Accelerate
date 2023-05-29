@@ -1,0 +1,28 @@
+@import "src/styles/variables.scss";
+
+@media (min-width: 1260px) {
+  .content-container {
+    max-width: $max-content-width;
+  }
+}
+.content-container {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: $spacing-9 $spacing-4;
+}
+@media screen and (max-width: $max-mobile-width) {
+  .content-container {
+    // margin-bottom: $spacing-8;
+    // margin-top: $spacing-7;
+    // padding: 0 $spacing-4;
+    padding: $spacing-8 $spacing-4;
+  }
+}
+
+// @media screen and (min-width: 500px) and (max-width: $max-tablet-width) {
+//   .content-container {
+//     padding: $spacing-9 0;
+//   }
+// }

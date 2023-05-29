@@ -1,0 +1,150 @@
+@import "src/styles/variables.scss";
+
+.usp-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+  }
+
+  .usps-mobile {
+    display: none;
+  }
+
+  p {
+    max-width: 50ch;
+    margin-bottom: 80px;
+  }
+  .usps {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: $spacing-4 0 $spacing-6 0;
+
+    .usp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 300px;
+      text-align: center;
+      p {
+        margin: $spacing-2 0 0 0;
+      }
+      img {
+        height: 80px;
+        margin-bottom: 10px;
+      }
+      h4 {
+        margin-bottom: 0;
+        font-family: "Outfit Medium";
+        font-size: $font-size-4;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: $max-tablet-width) {
+  .usp-section-wrapper {
+    // padding: $spacing-9 $page-padding 0 $page-padding;
+    // max-width: 1300px;
+    // margin: $spacing-9 auto;
+    // padding: 0 30px;
+
+    .usps-mobile {
+      display: none;
+    }
+
+    .usps {
+      display: flex;
+      justify-content: space-between;
+      .usp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 250px;
+        text-align: center;
+        p {
+          max-width: 30ch;
+        }
+        img {
+          height: 80px;
+          margin-bottom: 10px;
+        }
+        h4 {
+          margin-bottom: 0;
+          font-family: "Outfit Medium";
+          font-size: $font-size-4;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .usp-section-wrapper {
+    // padding: $spacing-9 $page-padding 0 $page-padding;
+    // max-width: 1300px;
+    // margin: $spacing-9 auto;
+    // padding: 0 30px;
+    align-items: flex-start;
+    .usps {
+      display: none;
+
+      // flex-direction: column;
+      // // justify-content: space-between;
+      // .usp {
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: flex-start;
+      //   max-width: 400px;
+      //   text-align: start;
+      //   p {
+      //     // max-width: 30ch;
+      //     text-align: start;
+      //   }
+      //   img {
+      //     height: 80px;
+      //     margin-bottom: 10px;
+      //   }
+      //   h4 {
+      //     margin-bottom: 0;
+      //     font-family: "Outfit Medium";
+      //     font-size: $font-size-4;
+      //   }
+      // }
+    }
+
+    .usps-mobile {
+      display: flex;
+      flex-direction: column;
+      .usp-mobile {
+        // .header {
+        text-align: start;
+
+        // .image-container {
+        //   width: 60px;
+        // }
+
+        .smaller-image {
+          height: 40px;
+        }
+
+        img {
+          height: 50px;
+          margin-right: 10px;
+        }
+        h4 {
+          text-align: start;
+        }
+        p {
+          text-align: start;
+          margin-top: 0;
+          margin-bottom: $spacing-7;
+        }
+
+        // }
+      }
+    }
+  }
+}

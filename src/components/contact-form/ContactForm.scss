@@ -1,0 +1,104 @@
+@import "src/styles/variables.scss";
+
+.contact-form-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #212121b3;
+
+  .content {
+    border-radius: 4px;
+    position: relative;
+    width: 400px;
+    padding: $spacing-7 $spacing-6 $spacing-4 $spacing-6;
+    background: white;
+    h2 {
+      text-align: center;
+    }
+    p {
+      line-height: 1.5;
+    }
+    textarea {
+      resize: none;
+    }
+
+    label {
+      font-size: $font-size-2;
+      color: $color-black;
+      margin-bottom: $spacing-1;
+    }
+
+    input,
+    textarea {
+      border: 1px solid $color-grey-light;
+      margin-bottom: $spacing-5;
+      padding: $spacing-2 $spacing-3;
+      outline: none;
+      border-radius: $spacing-1;
+    }
+
+    input:focus,
+    textarea:focus {
+      border: 1px solid $color-purple;
+      box-shadow: 0px 0px 4px $color-purple;
+    }
+
+    .button-container {
+      margin: $spacing-1 0 $spacing-6 0;
+    }
+    .loader-container {
+      width: $min-button-width;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-inverted {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $max-mobile-width) {
+  .contact-form-wrapper {
+    display: block;
+    .content {
+      overflow-y: auto;
+      p {
+        margin-top: $spacing-1;
+      }
+      label {
+        font-size: $font-size-4;
+        font-family: "Outfit SemiBold";
+      }
+      padding: $spacing-4;
+      border-radius: 0;
+      position: absolute;
+      width: auto;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100vh;
+      z-index: 100;
+      .close-button {
+        display: none;
+      }
+
+      input,
+      textarea {
+        margin-bottom: $spacing-5;
+      }
+
+      .button-inverted {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+// FONT SIZES
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 18px;
+$font-size-5: 20px;
+$font-size-6: 24px;
+$font-size-7: 30px;
+$font-size-8: 36px;
+$font-size-9: 48px;
+
+$color-black: #302c38;
+$color-green-light: #0ab75f;
+$color-green: #00a652;
+$color-purple: #a36dc6;
+$color-purple-light: #b478db;
+$color-pink: #feacd5;
+$color-grey-light: #e1e1e1;
+$color-grey: #c4c4c4;
+$color-grey-dark: #4f4f4f;
+$color-brown-light: #fdf6f0;
+
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+
+$max-mobile-width: 768px;
+$max-tablet-width: 1260px;
+
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 24px;
+$spacing-6: 32px;
+$spacing-7: 48px;
+$spacing-8: 64px;
+$spacing-9: 96px;
+$spacing-10: 128px;
+$spacing-11: 192px;
+$spacing-12: 256px;
+$spacing-13: 384px;
+$spacing-14: 512px;
+$spacing-15: 640px;
+$spacing-16: 768px;
+
+// VARIABLESs
+$max-header-width: 1300px;
+$max-content-width: 1200px;
+$qoute-section-height: $spacing-15;
+$page-padding: $spacing-11;
+$header-height: 100px;
+$menu-animation-duration: 0.1s;
+$min-button-width: 160px;
+
+$max-mobile-width: 768px;
+$max-tablet-width: 1260px;
+
+//MIXINS
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

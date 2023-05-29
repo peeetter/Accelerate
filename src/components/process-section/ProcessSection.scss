@@ -1,0 +1,91 @@
+@import "src/styles/variables.scss";
+
+.process-section-wrapper {
+  position: relative;
+  .process-section-background {
+    position: absolute;
+    width: 100vw;
+    background-color: $color-brown-light;
+    height: 100%;
+    z-index: -10;
+  }
+  .process-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .process-section-list {
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .item {
+        margin-bottom: $spacing-7;
+        align-items: flex-start;
+        .item-number {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-pink;
+          font-family: "Outfit Bold";
+          border-radius: 50%;
+          font-size: $font-size-8;
+          height: 70px;
+          width: 70px;
+          text-align: center;
+          margin-right: $spacing-4;
+          transform: translate(0, 10px);
+        }
+        p {
+          margin: 0;
+          max-width: 40ch;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .process-section-wrapper {
+    .process-section {
+      align-items: flex-start;
+
+      .process-section-list {
+        // max-width: 1200px;
+        // display: flex;
+        // flex-direction: column;
+
+        align-items: flex-start;
+        // margin-bottom: $spacing-8;
+        .item {
+          margin-bottom: $spacing-6;
+          // align-items: center;
+          .item-number {
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // background-color: $color-pink;
+            // font-family: "Outfit Bold";
+            // border-radius: 50%;
+            font-size: $font-size-6;
+            height: 40px;
+            width: 40px;
+            min-height: 40px;
+            min-width: 40px;
+            // text-align: center;
+            // margin-right: $spacing-4;
+          }
+          p {
+            margin: 0;
+            max-width: 40ch;
+          }
+        }
+      }
+    }
+  }
+  // .process-section-background {
+  //   display: none;
+  // }
+}
