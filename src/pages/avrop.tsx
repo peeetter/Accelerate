@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { Toaster } from "react-hot-toast";
 import { ContactForm } from "../components/contact-form/ContactForm";
 import { Header } from "../components/Header";
+import ProjectContainer1 from "../components/project-container-1/ProjectContainer1";
 import ProjectList from "../components/project-list/ProjectList";
 
 export type Project = {
@@ -32,7 +33,6 @@ const Projects: React.FC = () => {
   useEffect(() => {
     fetch("http://localhost:8080/getAllAssignments")
       .then((response) => response.json())
-
       .then((data) => {
         setProjects(data);
         setProjectsList(data);
@@ -106,7 +106,6 @@ const Projects: React.FC = () => {
         <Helmet>
           <title>Lediga uppdrag</title>
         </Helmet>
-
         <div className="projectsdiv">
           <h3>Lediga uppdrag</h3>
           <p>Här finns de uppdrag vi just nu söker konsulter till.</p>
@@ -120,39 +119,13 @@ const Projects: React.FC = () => {
             profil.
           </p>
           <div className="projects-container">
-            <div className="projects-container-1">
-              <div className="projects-container-1-content">
-                <div className="projects-container-1-content-child">
-                  <h4>Sök</h4>
-                  <input
-                    placeholder="Java, projekledare etc"
-                    value={searchValue}
-                    onChange={(e) => searchProjects(e.target.value)}
-                  />
-                </div>
-                <div className="projects-container-1-content-child">
-                  <h4>Visa enbart viss stad</h4>
+            <ProjectContainer1
+              citiesOfWorkplace={citiesOfWorkplace}
+              searchProjects={searchProjects}
+              handleCityChange={handleCityChange}
+              searchValue={searchValue}
+            />
 
-                  <select
-                    onChange={handleCityChange}
-                    className="select-dropdown"
-                  >
-                    <option value={"VISA ALLA"}> Visa alla </option>
-
-                    {citiesOfWorkplace.map((city) => (
-                      <option value={city}>{city}</option>
-                    ))}
-                  </select>
-                </div>
-                {/* <div className="projects-container-1-content-3">
-                  <h4>Sorta efter</h4>
-                  <input type="checkbox" />
-                  Senast publicerad <br />
-                  <input type="checkbox" />
-                  Deadline
-                </div> */}
-              </div>
-            </div>
             <div className="projects-container-2">
               <ProjectList projects={projectsList} />
             </div>
