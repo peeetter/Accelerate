@@ -1,12 +1,11 @@
 import { useForm } from "@formspree/react";
-import format from "date-fns/format";
 import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
-import { ApplyForAssignmentForm } from "../components/assignment-apply/ApplyForAssignmentForm";
+
 import { Header } from "../components/Header";
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
-import { FlexContainer } from "../components/FlexContainer/FlexContainer";
+
 import ProjectPageColumn1 from "../components/project-page-column-1/ProjectPageColumn1";
 import ProjectPageColumn2 from "../components/project-page-column-2/ProjectPageColumn2";
 
@@ -38,6 +37,7 @@ const ProjectPage = () => {
       closeModal();
       notify();
       resetForm();
+      setSelectedFileName("");
     }
   }, [state.succeeded]);
 
@@ -48,11 +48,14 @@ const ProjectPage = () => {
   };
   const [project, setProject] = useState<ProjectWithDescription>();
   const [selectedFile, setSelectedFile] = useState();
+  const [selectedFileName, setSelectedFileName] = useState("");
   const handleFileChange = (event: any) => {
     setSelectedFile(event.target.files[0]);
-  };
 
-  const [cities, setCities] = useState([]);
+    if (event.target.files[0].name !== null) {
+      setSelectedFileName(event.target.files[0].name);
+    }
+  };
 
   useEffect(() => {
     fetch("http://localhost:8080/getAssignment/" + getIdParameters())
@@ -71,6 +74,7 @@ const ProjectPage = () => {
   return (
     <>
       <Header />
+
       <div className="project-page">
         <div className="link-back">
           <div className="arrowlink-back-icon">
@@ -86,6 +90,7 @@ const ProjectPage = () => {
             handleFileChange={handleFileChange}
             project={project}
             openModal={openModal}
+            selectedFileName={selectedFileName}
           />
         </div>
       </div>

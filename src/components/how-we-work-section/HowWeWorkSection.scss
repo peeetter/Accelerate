@@ -23,7 +23,7 @@
 
   p {
     max-width: 50ch;
-    font-size: 18px;
+    font-size: $font-size-4;
     text-align: center;
     margin: 0;
   }
@@ -51,7 +51,7 @@
     p {
       max-width: 50ch;
       margin-bottom: $spacing-3;
-      font-size: 18px;
+      font-size: $font-size-1;
       font-family: "Outfit Light";
       text-align: start;
     }

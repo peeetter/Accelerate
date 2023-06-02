@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import React from "react";
 import { ProjectWithDescription } from "../../pages/ost";
+import { formatDateMonth } from "../../utils/date";
 import "./ProjectPageColumn1.scss";
 
 type Props = {
@@ -18,7 +19,7 @@ const ProjectPageColumn1 = ({ project }: Props) => {
             <div className="facts-div-item-text">
               {project?.startDate === undefined
                 ? ""
-                : format(new Date(project.startDate), "yyyy-MM-dd")}
+                : formatDateMonth(new Date(project.startDate))}
             </div>
           </div>
           <div className="facts-div-item">
@@ -26,12 +27,19 @@ const ProjectPageColumn1 = ({ project }: Props) => {
             <div className="facts-div-item-text">
               {project?.endDate === undefined
                 ? " tills vidare"
-                : format(new Date(project.endDate), "yyyy-MM-dd")}
+                : formatDateMonth(new Date(project.endDate))}
             </div>
           </div>
+
           <div className="facts-div-item">
             <div className="facts-div-item-header">Plats</div>
             <div className="facts-div-item-text">{project?.city}</div>
+          </div>
+          <div className="facts-div-item">
+            <div className="facts-div-item-header">Möjlig remote</div>
+            <div className="facts-div-item-text">
+              {project?.allowRemote ? "Ja" : "Nej"}
+            </div>
           </div>
         </div>
         <div className="project-page-assignment-content">

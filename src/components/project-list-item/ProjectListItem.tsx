@@ -4,9 +4,7 @@ import "./ProjectListItem.scss";
 import { CalendarDaysIcon } from "@heroicons/react/20/solid";
 import AllowRemote from "../allow-remote/AllowRemote";
 import { format } from "date-fns";
-import { navigate } from "@reach/router";
 import { Link } from "gatsby";
-import swedish from "date-fns/locale/sv";
 import { formatDateMonth } from "../../utils/date";
 
 type Props = {
@@ -22,7 +20,7 @@ const ProjectListItem = ({ project }: Props) => {
           <div className="project-list-item-row-content">
             <div className="project-list-item-row-title">
               <Link
-                className="project-item-button-link"
+                id="project-item-button-link"
                 to={"/ost?id=" + project.cinodeId}
                 target="_blank"
               >

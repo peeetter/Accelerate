@@ -14,6 +14,7 @@ export const Header = () => {
   const handleMenuClick = () => setMenuOpen((prev) => !prev);
 
   const handleLinkClick = (id: string) => {
+    console.log("WWWWWWWWW!");
     setMenuOpen(false);
     scrollTo(id);
   };

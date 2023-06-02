@@ -8,6 +8,7 @@
 
 .label-apply {
   color: $color-grey-dark;
+  font-size: $font-size-2;
 }
 
 .project-page-facts {
@@ -23,12 +24,13 @@
 
 .project-page-facts-content {
   padding: 12px;
+  justify-content: center;
 }
 
 .project-page-apply-header {
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: $font-size-4;
   line-height: 23px;
   color: #302c37;
 }
@@ -49,22 +51,52 @@
 
 .project-page-apply-content-content {
   margin: 30px;
+  font-size: $font-size-2;
+  font-weight: 400;
+  color: $color-grey-dark;
 }
 
-.project-page-apply-content-deadline {
+#text-last-day-apply {
+  color: $color-grey-dark;
+  font-size: $font-size-2;
+  font-style: italic;
+  font-weight: 200;
   display: flex;
+  justify-content: center;
 }
 
-#name,
-#email,
-#tel,
-#upload,
-#message {
+#apply-name,
+#apply-email,
+#apply-tel,
+#apply-upload,
+#apply-message {
   border: 0;
+}
+
+#apply-header {
+  display: flex;
+  justify-content: center;
+}
+
+#message::placeholder {
+  font-size: $font-size-2;
 }
 
 .project-page-apply-content-apply {
   margin: 10px;
+}
+
+.project-page-apply-content-apply-btn {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.project-page-apply-content-apply-top {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .upload-btn {
@@ -80,7 +112,7 @@
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 14px;
+  font-size: $font-size-2;
   font-weight: 500;
   line-height: 20px;
   list-style: none;
@@ -111,8 +143,16 @@
 
 #file-chosen {
   color: black;
+  font-size: $font-size-1;
 }
 
+#send-mail-to {
+  font-weight: bold;
+}
+
+#forms-div {
+  margin: 10px;
+}
 // <!-- HTML !-->
 // <button class="button-4" role="button">Button 4</button>
 

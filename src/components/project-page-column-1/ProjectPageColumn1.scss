@@ -1,3 +1,5 @@
+@import "./../../styles/variables.scss";
+
 .project-page-column-1 {
   margin-top: 10px;
   width: 60%;
@@ -8,4 +10,52 @@
   margin-right: 0;
   width: 100%;
   border: 1px dashed #ffe6f2;
+}
+
+.facts-div {
+  display: flex;
+  margin: 30px;
+}
+
+.facts-div-item {
+  margin-right: 50px;
+}
+
+.facts-div-item-text {
+  font-weight: 400;
+  font-size: $font-size-2;
+  line-height: 20px;
+  color: $color-grey-dark;
+}
+
+.facts-div-item-header {
+  font-weight: 400;
+  font-size: $font-size-3;
+  line-height: 20px;
+}
+
+.project-page-header {
+  font-style: normal;
+  font-weight: 600;
+  font-size: $font-size-8;
+  line-height: 50px;
+  color: #302c37;
+  margin: 30px;
+}
+
+.project-page-assignment-content {
+  margin: 30px;
+}
+
+.description-header {
+  font-weight: 700;
+  font-size: $font-size-3;
+  line-height: 20px;
+  margin-top: 30px;
+  color: $color-grey-dark;
+}
+
+.description-text {
+  font-size: $font-size-2;
+  font-weight: 400;
 }

@@ -9,8 +9,9 @@
   color: #34126f;
 }
 
-.project-item-button-link {
-  color: $color-purple;
+#project-item-button-link {
+  color: $color-green;
+  font-size: $font-size-4;
 }
 
 .project-item-td-project {
@@ -72,11 +73,11 @@
 }
 
 .date-text {
-  font-size: 12px;
+  font-size: $font-size-1;
   margin: 0;
 }
 
 .remote-possible {
-  font-size: 12px;
+  font-size: $font-size-1;
   margin-left: 10px;
 }

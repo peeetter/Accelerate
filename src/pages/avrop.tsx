@@ -7,6 +7,7 @@ import { ContactForm } from "../components/contact-form/ContactForm";
 import { Header } from "../components/Header";
 import ProjectContainer1 from "../components/project-container-1/ProjectContainer1";
 import ProjectList from "../components/project-list/ProjectList";
+import { ProjectWithDescription } from "./ost";
 
 export type Project = {
   cinodeId: number;
@@ -34,25 +35,23 @@ const Projects: React.FC = () => {
     fetch("http://localhost:8080/getAllAssignments")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setProjects(data);
         setProjectsList(data);
+
         let places: string[] = [];
         data.forEach((x: { city: string }) => {
           if (!places.includes(x.city)) {
             places.push(x.city);
           }
         });
-        console.log("places:" + places);
+
         setCitiesOfWorkplace(places);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-
-  {
-    /* SELECT */
-  }
 
   let [selectedCity, setSelectecCity] = useState("Välj stad");
 
@@ -99,6 +98,51 @@ const Projects: React.FC = () => {
     });
   };
 
+  const sortByDeadline = (a: Project, b: Project) => {
+    let date1 = a.deadlineDate,
+      date2 = b.deadlineDate;
+
+    if (date1 < date2) return -1;
+    if (date1 > date2) return 1;
+    return 0;
+  };
+
+  const sortByAndShowDeadline = () => {
+    let projectsToSort: Project[] = [...projectsList];
+
+    let newArrayOfSortedByDeadlineProjects: Project[] =
+      projectsToSort.sort(sortByDeadline);
+
+    setProjectsList(newArrayOfSortedByDeadlineProjects);
+  };
+
+  const sortByCreated = (a: Project, b: Project) => {
+    let date1 = a.announcedDate,
+      date2 = b.announcedDate;
+
+    if (date1 < date2) return -1;
+    if (date1 > date2) return 1;
+    return 0;
+  };
+
+  const sortByAndShowCreated = () => {
+    let projectsToSort: Project[] = [...projectsList];
+
+    let newArrayOfSortedByCreatedProjects: Project[] =
+      projectsToSort.sort(sortByCreated);
+    setProjectsList(newArrayOfSortedByCreatedProjects);
+  };
+
+  const handleShowLatestFilteredBy = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    if (e.target.value === "D") {
+      sortByAndShowDeadline();
+    } else {
+      sortByAndShowCreated();
+    }
+  };
+
   return (
     <>
       <Header />
@@ -112,7 +156,7 @@ const Projects: React.FC = () => {
           <p>
             Hittar du inget uppdrag som passar dig? Eller vill du få
             uppdragförfrågningar utskickade till dig direkt? <br />
-            <u className="link-sign-up" onClick={openModal}>
+            <u id="link-sign-up" onClick={openModal}>
               Signa upp i vårt nätverk
             </u>{" "}
             så skickar vi ut förfrågningar så fort vi har något som matchar din
@@ -124,6 +168,7 @@ const Projects: React.FC = () => {
               searchProjects={searchProjects}
               handleCityChange={handleCityChange}
               searchValue={searchValue}
+              handleShowLatestFilteredBy={handleShowLatestFilteredBy}
             />
 
             <div className="projects-container-2">
